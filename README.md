@@ -1,4 +1,17 @@
-# NJU_Health-Checkin
+# Checkin
+
+
+## 使用方法
+1. 将本项目 Fork 到自己的仓库。
+2. 打开自己 Fork 之后的仓库，因为没有填写账户信息，此时若触发打卡，一定会失败。
+3. 进入 `Settings` 选项，点击 `Secret`，并选择 `New Repository Secret`。依次添加以下变量：
+   - `username`: 学号
+   - `password`: 南京大学统一认证的密码
+   - `location`: 你希望打卡的地理位置。比如南京大学仙林校区可以填 `中国江苏省南京市栖霞区九乡河东路`
+   - `method`: 上一次核酸时间，字典类型，`interval`为检测间隔，字符串或数字，`start_time`为检测开始时间，需要精确到天，例如`{"interval":"3","start_time":"2022-4-12"}`"2022-04-24+10"
+
+
+
 
 **使用方法**
 
