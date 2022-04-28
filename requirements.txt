@@ -5,7 +5,6 @@ onnxruntime
 pillow
 numpy
 opencv-python
-re
 urllib
 execjs
 ddddocr
