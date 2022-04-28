@@ -5,3 +5,11 @@ onnxruntime
 pillow
 numpy
 opencv-python
+json
+re
+os
+time
+urllib
+execjs
+datetime
+ddddocr
