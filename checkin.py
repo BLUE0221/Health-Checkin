@@ -1,5 +1,6 @@
 import json
 import re
+import os
 import time
 import urllib
 import requests
@@ -108,6 +109,11 @@ def checkin(session, checkin_info):
 def main():
 	with open("config.json", "r", encoding='utf-8') as f:
 		info = json.load(f)
+	info["student_id"]=os.getenv('NJU_USERNAME')
+	info["password"]=os.getenv('NJU_PASSWORD')
+	info["location"]=os.getenv('CURR_LOCATION')
+	info["interval"]="5"
+	info["last_RNA"]=os.getenv('COVID_TEST_METHOD')
 	
 	session = requests.Session()
 	session.cookies = requests.cookies.RequestsCookieJar()
