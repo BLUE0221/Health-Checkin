@@ -5,5 +5,4 @@ onnxruntime
 pillow
 numpy
 opencv-python
-execjs
 ddddocr
