@@ -103,7 +103,26 @@ def checkin(session, checkin_info):
 	else: 
 		print(f"failed, {cur_time}")
 		return False
-
+	
+def get_zjhs_time(method='YESTERDAY'):
+    today = datetime.datetime.now(timezone('Asia/Shanghai'))
+    yesterday = today + datetime.timedelta(-1)
+    if method == 'YESTERDAY':
+        return yesterday.strftime("%Y-%m-%d %-H")
+    else:
+        eval_method = method
+        try:
+            start_time = datetime.datetime.strptime(
+                eval_method['last_RNA'], "%Y-%m-%d").date()
+            interval = int(eval_method['interval'])
+            covid_test_time = today - \
+                datetime.timedelta((today.date()-start_time).days % interval)
+        except ValueError as e:
+            covid_test_time = yesterday
+        #     log.error(e)
+        #     log.error("设置核酸检测时间为昨日")
+        # log.info(f"最近核酸检测时间为{covid_test_time}")
+        return covid_test_time.strftime("%Y-%m-%d %-H")
 
 
 def main():
@@ -132,6 +151,7 @@ def main():
 	wid, location, status = check_login(session, info['location'])
 	if not status:
 		return False
+	info['last_RNA']=get_zjhs_time(info)
 	health_status = (
 		wid,                            # WID
 		location,                       # 地点
