@@ -5,6 +5,7 @@ import time
 import urllib
 import requests
 import execjs
+from pytz import timezone
 from bs4 import BeautifulSoup
 from collections import namedtuple
 import datetime
