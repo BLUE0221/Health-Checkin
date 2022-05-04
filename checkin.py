@@ -115,8 +115,7 @@ def get_zjhs_time(method='YESTERDAY'):
         try:
             start_time = datetime.datetime.strptime(
                 eval_method['last_RNA'], "%Y-%m-%d").date()
-#             interval = int(eval_method['interval'])
-	    interval=5
+            interval = int(eval_method['interval'])
 		
             covid_test_time = today - \
                 datetime.timedelta((today.date()-start_time).days % interval)
