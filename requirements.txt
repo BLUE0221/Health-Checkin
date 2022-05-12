@@ -1,5 +1,5 @@
 PyExecJS
-requests
+requests==2.26.0
 beautifulsoup4
 onnxruntime
 pillow
