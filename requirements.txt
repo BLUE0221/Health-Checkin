@@ -1,9 +1,9 @@
-PyExecJS
-requests==2.26.0
-beautifulsoup4
-onnxruntime
-pillow
+PyExecJS==1.5.1
+requests==2.26.0 
+beautifulsoup4==4.11.1
+onnxruntime==1.11.0
+pillow==8.3.1
 numpy
-opencv-python
+opencv-python==4.5.5.64
 ddddocr
-pytz
+pytz==2021.1 
